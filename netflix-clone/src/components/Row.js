@@ -6,8 +6,6 @@ const imgBaseURL = "https://image.tmdb.org/t/p/original/"
 
 function Row({title, fetchUrl, isLargeRow}) {
     const [movies, setMovies] = useState([]);
-
-    // a conditonal code snippet
     useEffect(() => {
         async function fetchData() {
             const request = await axios.get(fetchUrl);
@@ -16,8 +14,6 @@ function Row({title, fetchUrl, isLargeRow}) {
         }
         fetchData();
     }, [fetchUrl])
-
-    console.log(movies)
 
     return (
         <div className="row">
