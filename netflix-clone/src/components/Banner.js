@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios  from '../utils/axios';
 import requests from '../utils/requests';
+import  '../Banner.css';
 
 const imgBaseURL = "https://image.tmdb.org/t/p/original/"
 function Banner() {
@@ -19,7 +20,13 @@ function Banner() {
         }
         fetchData();
     },[]);
+
     console.log(movie)
+
+    function truncate(str, n) {
+        return str?.length > n ? str.substr(0, n-1) + "..." : str;
+    }
+
     return (
         <header className="banner"
             style={{
@@ -29,13 +36,14 @@ function Banner() {
             }}
         > 
             <div className="banner__contents">
-                <h1>{movie?.name || movie?.original_name || movie.title}</h1>
+                <h1 className="banner__title">{movie?.name || movie?.original_name || movie.title}</h1>
                 <div className="banner__buttons">
                     <button className="banner__button">Play</button>
                     <button className="banner__button">My List</button>
                 </div>
-                <h1 className="banner__description">{movie?.overview}</h1>
+                <h1 className="banner__description">{truncate(movie?.overview)}</h1>
             </div>
+            <div className="banner__fadeBottom"></div>
         </header>
     )
 }
