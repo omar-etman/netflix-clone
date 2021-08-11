@@ -1,4 +1,4 @@
-import '../App.css';
+import '../styles/App.css';
 import Row from"./Row"
 import requests from '../utils/requests';
 import Banner from './Banner';

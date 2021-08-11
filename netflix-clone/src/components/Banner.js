@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios  from '../utils/axios';
 import requests from '../utils/requests';
-import  '../Banner.css';
+import  '../styles/Banner.css';
 
 const imgBaseURL = "https://image.tmdb.org/t/p/original/"
 function Banner() {
@@ -36,7 +36,7 @@ function Banner() {
             }}
         > 
             <div className="banner__contents">
-                <h1 className="banner__title">{movie?.name || movie?.original_name || movie.title}</h1>
+                <h1 className="banner__title">{movie?.name || movie?.original_name || movie?.title}</h1>
                 <div className="banner__buttons">
                     <button className="banner__button">Play</button>
                     <button className="banner__button">My List</button>
