@@ -10,6 +10,8 @@ const imgBaseURL = "https://image.tmdb.org/t/p/original/"
 function Row({title, fetchUrl, isLargeRow}) {
     const [movies, setMovies] = useState([]);
     const [trailerUrl, setTrailerUrl] = useState("");
+
+    kjhefkehkergkreygk
     useEffect(() => {
         async function fetchData() {
             const request = await axios.get(fetchUrl);
@@ -41,7 +43,6 @@ function Row({title, fetchUrl, isLargeRow}) {
         }
     }
     
-
     return (
         <div className="row">
            <h2>{title}</h2>
